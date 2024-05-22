@@ -32,15 +32,19 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto navbar-list">
-                            <li class="nav-item">
+
+                            {{-- search --}}
+                            {{-- <li class="nav-item">
                                 <a class="search-toggle iq-waves-effect" href="#"><i
                                         class="ri-search-line"></i></a>
                                 <form action="#" class="search-box">
                                     <input type="text" class="text search-input"
                                         placeholder="Type here to search..." />
                                 </form>
-                            </li>
-                            <li class="nav-item dropdown">
+                            </li> --}}
+
+                            {{-- mail --}}
+                            {{-- <li class="nav-item dropdown">
                                 <a href="#" class="search-toggle iq-waves-effect">
                                     <i class="ri-mail-line"></i>
                                     <span class="badge badge-pill badge-primary badge-up count-mail">3</span>
@@ -115,11 +119,15 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item">
+                            </li> --}}
+
+                            {{-- shopping --}}
+                            {{-- <li class="nav-item">
                                 <a href="#" class="iq-waves-effect"><i class="ri-shopping-cart-2-line"></i></a>
-                            </li>
-                            <li class="nav-item">
+                            </li> --}}
+
+                            {{-- notification --}}
+                            {{-- <li class="nav-item">
                                 <a href="#" class="search-toggle iq-waves-effect">
                                     <i class="ri-notification-2-line"></i>
                                     <span class="bg-danger dots"></span>
@@ -182,7 +190,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li> --}}
                             <li class="nav-item iq-full-screen"><a href="#" class="iq-waves-effect"
                                     id="btnFullscreen"><i class="ri-fullscreen-line"></i></a></li>
                         </ul>
