@@ -17,7 +17,9 @@
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Phone Number</th>
                             <th>Email</th>
+                            <th>Role</th>
                             <th>Join Date</th>
                             <th>Action</th>
                         </tr>
@@ -26,7 +28,25 @@
                         @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->name }}</td>
+                                <td>
+                                    @if ($user->phone_number == null)
+                                        <span class="badge badge-secondary">Belum diisi</span>
+                                    @else
+                                        {{ $user->phone_number }}
+                                    @endif
+                                </td>
                                 <td>{{ $user->email }}</td>
+                                <td>
+                                    @if ($user->role == 'admin')
+                                        <span class="badge badge-primary">
+                                            <i class="ri-user-star-fill"></i>
+                                            Admin</span>
+                                    @else
+                                        <span class="badge badge-secondary">
+                                            <i class="ri-user-fill"></i>
+                                            User</span>
+                                    @endif
+                                </td>
                                 <td>{{ $user->created_at->format('d M Y, H:i:s') }}</td>
                                 <td>
                                     <div class="flex align-items-center list-user-action">
@@ -70,6 +90,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="addPhoneNumber">Phone Number</label>
+                            <input required type="email" class="form-control" id="addPhoneNumber" name="phone_number">
+                        </div>
+
+                        <div class="form-group">
                             <label for="addRole">Role</label>
                             <select class="form-control" id="addRole" name="role">
                                 <option value="admin">Admin</option>
@@ -110,6 +135,12 @@
                         <div class="form-group">
                             <label for="editEmail">Email</label>
                             <input required type="email" class="form-control" id="editEmail" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="editPhoneNumber">Phone Number</label>
+                            <input required type="email" class="form-control" id="editPhoneNumber"
+                                name="phone_number">
                         </div>
 
                         <div class="form-group">
@@ -160,6 +191,7 @@
             let data = {
                 name: $('#addName').val(),
                 email: $('#addEmail').val(),
+                phone_number: $('#addPhoneNumber').val(),
                 password: $('#addPassword').val(),
                 role: $('#addRole').val()
             }
@@ -216,7 +248,9 @@
             let data = {
                 name: $('#editName').val(),
                 email: $('#editEmail').val(),
+                phone_number: $('#editPhoneNumber').val(),
                 password: $('#editPassword').val(),
+                role: $('#editRole').val(),
                 _method: 'PUT'
             }
 
@@ -310,6 +344,7 @@
                     // isi form editModal dengan data user
                     $('#editName').val(response.data.name);
                     $('#editEmail').val(response.data.email);
+                    $('#editPhoneNumber').val(response.data.phone_number);
                     $('#editRole').val(response.data.role);
 
                     // tampilkan modal editModal
