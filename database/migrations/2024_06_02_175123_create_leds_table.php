@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('leds', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('pin');
+            $table->boolean('status')
+                ->default(false);
             $table->timestamps();
         });
     }

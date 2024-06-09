@@ -28,10 +28,11 @@
                 </li>
 
                 <li class="
-                @if (request()->url() == route('led-control.index')) active @endif">
-                    <a href="{{ route('led-control.index') }}" class="iq-waves-effect"><i
-                            class="ri-lightbulb-line"></i><span>LED
-                            Control</span></a>
+          @if (request()->url() == route('led.index')) active @endif
+          ">
+                    <a href="{{ route('led.index') }}" class="iq-waves-effect"><i
+                            class="ri-lightbulb-line"></i><span>LED Control</span></a>
+
                 </li>
 
                 <li class="

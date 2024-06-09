@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LedController;
+use App\Http\Controllers\SensorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,14 +29,19 @@ Route::get('/sensor', function () {
     return view('pages.sensor', $data);
 })->middleware(['auth', 'verified'])->name('sensor.index');
 
-Route::get('/led-control', function () {
-    $data['title'] = 'LED Control';
-    $data['breadcrumbs'][] = [
-        'title' => 'LED Control',
-        'url' => route('led-control.index')
-    ];
-    return view('pages.led-control', $data);
-})->middleware(['auth', 'verified'])->name('led-control.index');
+// Route::get('/led', function () {
+//     $data['title'] = 'LED Control';
+//     $data['breadcrumbs'][] = [
+//         'title' => 'LED Control',
+//         'url' => route('led.index')
+//     ];
+//     return view('pages.led', $data);
+// })->middleware(['auth', 'verified'])->name('led.index');
+Route::controller(LedController::class)->group(function () {
+    Route::get('/leds', 'index')->name('led.index');
+    Route::post('/leds', 'store')->name('led.store');
+});
+
 
 
 
