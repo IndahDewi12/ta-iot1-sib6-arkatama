@@ -1,8 +1,8 @@
 <div class="iq-sidebar">
     <div class="iq-sidebar-logo d-flex justify-content-between">
         <a href="index.html">
-            <img src="images/logo_bebas.png" class="img-fluid" alt="">
-            <span>IoT1</span>
+            <img src="images/logo_dapur.jpg" class="img-fluid" alt="">
+            <span>Dapoer46</span>
         </a>
         <div class="iq-menu-bt align-self-center">
             <div class="wrapper-menu">
@@ -21,19 +21,19 @@
                             class="ri-home-4-line"></i><span>Dashboard</span></a>
                 </li>
 
-                <li class="
+                {{-- <li class="
                 @if (request()->url() == route('sensor.index')) active @endif">
                     <a href="{{ route('sensor.index') }}" class="iq-waves-effect"><i
                             class="ri-sensor-line"></i><span>Sensor</span></a>
-                </li>
+                </li> --}}
 
-                <li class="
+                {{-- <li class="
           @if (request()->url() == route('led.index')) active @endif
           ">
                     <a href="{{ route('led.index') }}" class="iq-waves-effect"><i
                             class="ri-lightbulb-line"></i><span>LED Control</span></a>
 
-                </li>
+                </li> --}}
 
                 <li class="
                 @if (request()->url() == route('users.index')) active @endif">

@@ -53,7 +53,7 @@ class WhatsappNotificationService
     {
         $message .= PHP_EOL;
         $message .= PHP_EOL;
-        $message .= 'Dikirimkan pada tanggal ' . date('Y-m-d H:i:s') . ' oleh IoT Panel Arkatama';
+        $message .= 'Dikirimkan pada tanggal ' . date('Y-m-d H:i:s') . ' oleh IoT Manage Indah';
         return $message;
     }
 

@@ -49,7 +49,7 @@
         </div>
 
         <!-- Rain sensor -->
-        <div class="col-sm-10 col-md-4">
+        {{-- <div class="col-sm-10 col-md-4">
             <div class="card iq-mb-3">
                 <div class="card-body">
                     <h4 class="card-title">Monitoring Sensor Hujan</h4>
@@ -58,7 +58,7 @@
                     <p class="card-text"><small class="text-muted">Terakhir diubah 3 menit lalu</small></p>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection
 
@@ -298,7 +298,7 @@
                 yAxis: {
                     min: 0,
                     max: 100,
-                    tickPixelInterval: 10,
+                    tickInterval: 10, // Set interval to 10 for multiples of 10
                     tickPosition: 'inside',
                     tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
                     tickLength: 20,
@@ -314,7 +314,7 @@
                     plotBands: [{
                         from: 0,
                         to: 40,
-                        color: '#DF5353', // red
+                        color: '#55BF3B', // green
                         thickness: 20,
                         borderRadius: '50%'
                     }, {
@@ -326,7 +326,7 @@
                     }, {
                         from: 60,
                         to: 100,
-                        color: '#55BF3B', // green
+                        color: '#DF5353', // red
                         thickness: 20,
                         borderRadius: '50%'
                     }]
@@ -363,6 +363,9 @@
                 }]
             });
 
+
+
+
             gaugeTemperature = new Highcharts.Chart({
                 chart: {
                     renderTo: 'gaugeTemperature',
@@ -388,8 +391,8 @@
                 },
                 yAxis: {
                     min: 0,
-                    max: 50,
-                    tickPixelInterval: 5,
+                    max: 100,
+                    tickInterval: 10, // Set interval to 10 for multiples of 10
                     tickPosition: 'inside',
                     tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
                     tickLength: 20,
@@ -404,19 +407,19 @@
                     lineWidth: 0,
                     plotBands: [{
                         from: 0,
-                        to: 20,
+                        to: 40,
                         color: '#55BF3B', // green
                         thickness: 20,
                         borderRadius: '50%'
                     }, {
-                        from: 20,
-                        to: 35,
+                        from: 40,
+                        to: 60,
                         color: '#DDDF0D', // yellow
                         thickness: 20,
                         borderRadius: '50%'
                     }, {
-                        from: 35,
-                        to: 50,
+                        from: 60,
+                        to: 100,
                         color: '#DF5353', // red
                         thickness: 20,
                         borderRadius: '50%'
@@ -453,6 +456,7 @@
                     }
                 }]
             });
+
 
             gaugeRain = new Highcharts.Chart({
                 chart: {

@@ -53,7 +53,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Evolo</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>
+        {{-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> --}}
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
@@ -94,7 +94,7 @@
 
 
             </ul>
-            <span class="nav-item social-icons">
+            {{-- <span class="nav-item social-icons">
                 <span class="fa-stack">
                     <a href="#your-link">
                         <i class="fas fa-circle fa-stack-2x facebook"></i>
@@ -107,7 +107,7 @@
                         <i class="fab fa-twitter fa-stack-1x"></i>
                     </a>
                 </span>
-            </span>
+            </span> --}}
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
@@ -120,8 +120,8 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="text-container">
-                            <h1><span class="turquoise">Welcome! </span> IoT Control</h1>
-                            <p class="p-large">Monitoring Sensor dan Kontrol LED</p>
+                            <h1><span class="turquoise">Selamat Datang!</span> Internet of Things "DAPOER 46"</h1>
+                            <p class="p-large">Monitoring Lingkungan Dapur</p>
                             {{-- tag a: anchor->hyperlink --}}
                             {{-- href: hyperlink reference --}}
                             @if (Auth::check())
@@ -147,8 +147,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © Evolo - StartUp HTML Landing Page Template by <a
-                            href="https://inovatik.com">Inovatik</a></p>
+                    <p class="p-small">Copyright © Indah Purnama Dewi</p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->

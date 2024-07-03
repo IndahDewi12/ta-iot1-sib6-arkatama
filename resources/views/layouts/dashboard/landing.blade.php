@@ -20,7 +20,7 @@
     <meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>Evolo - StartUp HTML Landing Page Template</title>
+    <title>Internet of Things</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext"

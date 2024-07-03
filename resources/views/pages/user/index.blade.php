@@ -17,7 +17,7 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Phone Number</th>
+                            {{-- <th>Phone Number</th> --}}
                             <th>Email</th>
                             <th>Role</th>
                             <th>Join Date</th>
@@ -28,13 +28,13 @@
                         @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->name }}</td>
-                                <td>
+                                {{-- <td>
                                     @if ($user->phone_number == null)
                                         <span class="badge badge-secondary">Belum diisi</span>
                                     @else
                                         {{ $user->phone_number }}
                                     @endif
-                                </td>
+                                </td> --}}
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     @if ($user->role == 'admin')
@@ -89,10 +89,10 @@
                             <input required type="email" class="form-control" id="addEmail" name="email">
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="addPhoneNumber">Phone Number</label>
                             <input required type="email" class="form-control" id="addPhoneNumber" name="phone_number">
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="addRole">Role</label>
@@ -137,11 +137,11 @@
                             <input required type="email" class="form-control" id="editEmail" name="email">
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="editPhoneNumber">Phone Number</label>
                             <input required type="email" class="form-control" id="editPhoneNumber"
                                 name="phone_number">
-                        </div>
+                        </div> --}}
 
                         <div class="form-group">
                             <label for="editRole">Role</label>
