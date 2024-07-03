@@ -363,9 +363,6 @@
                 }]
             });
 
-
-
-
             gaugeTemperature = new Highcharts.Chart({
                 chart: {
                     renderTo: 'gaugeTemperature',
