@@ -6,6 +6,7 @@ use App\Models\SentMessage;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
 
+
 class WhatsappNotificationService
 {
     public static function getConfig()
@@ -53,15 +54,17 @@ class WhatsappNotificationService
     {
         $message .= PHP_EOL;
         $message .= PHP_EOL;
-        $message .= 'Dikirimkan pada tanggal ' . date('Y-m-d H:i:s') . ' oleh IoT Manage Indah';
+        $message .= 'Dikirimkan' . ' oleh IoT Manage Fitria';
         return $message;
     }
 
     public static function notifikasiKebocoranGas($user, $nilaiSensor)
     {
-        $target = $user->phone_number;
-        $name = $user->name;
 
+        $target = $user->phone_number;
+        //$target="085606117741";
+        $name = $user->name;
+        //dd($target);
         $message = "Peringatan!" . PHP_EOL;
         $message .= "Halo $name terdeteksi kebocoran gas pada sensor Anda. Nilai sensor: $nilaiSensor yang berpotensi membahayakan.";
 
@@ -70,8 +73,9 @@ class WhatsappNotificationService
 
     public static function notifikasiKebocoranGasMassal($nilaiSensor)
     {
-        $nilaiMaksimalSensor = 100; //contoh
-        $durasiPesan = 1; //contoh dalam menit
+        // dd($nilaiSensor);
+        $nilaiMaksimalSensor = 300; // contoh
+        $durasiPesan = 3; // contoh dalam menit
 
         $jenisSensor = 'mq5';
 
@@ -91,7 +95,7 @@ class WhatsappNotificationService
         }
 
         // jika belum pernah dikirim atau sudah lebih dari durasi pesan
-        if (!$lastSent || now()->diffInMinutes($lastSent->created_at) >= $durasiPesan) {
+        if (!$lastSent || abs(now()->diffInMinutes($lastSent->created_at)) >= $durasiPesan) {
             foreach ($users as $user) {
                 self::notifikasiKebocoranGas($user, $nilaiSensor);
             }
@@ -103,7 +107,3 @@ class WhatsappNotificationService
         }
     }
 }
-
-// mengambil token dari config/wasender.php
-// mengirimkan pesan ke nomor whatsapp
-// notifikasi kebocoran gas

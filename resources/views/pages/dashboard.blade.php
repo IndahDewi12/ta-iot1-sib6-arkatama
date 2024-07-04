@@ -138,21 +138,7 @@
             }
         }
 
-        async function requestGaugeRain() {
-            const result = await fetch("{{ route('api.sensors.rain.index') }}");
-            if (result.ok) {
-                const data = await result.json();
-                const sensorData = data.data;
 
-                const value = sensorData.value;
-
-                if (gaugeRain) {
-                    gaugeRain.series[0].setData([Number(value)], true, true, true);
-                }
-
-                setTimeout(requestGaugeRain, 3000);
-            }
-        }
         window.addEventListener('load', function() {
             chartGas = new Highcharts.Chart({
                 chart: {
