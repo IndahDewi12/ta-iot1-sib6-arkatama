@@ -54,7 +54,7 @@ class WhatsappNotificationService
     {
         $message .= PHP_EOL;
         $message .= PHP_EOL;
-        $message .= 'Dikirimkan' . ' oleh IoT Manage Fitria';
+        $message .= 'Dikirimkan' . ' oleh IoT Manage Indah';
         return $message;
     }
 
