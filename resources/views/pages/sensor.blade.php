@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 
-{{-- @section('content')
+@section('content')
     <div class="row">
         <!-- Gas Sensor Monitoring -->
         <div class="col-sm-12 col-md-6">
@@ -59,10 +59,10 @@
                 </div>
             </div>
         </div> --}}
-</div>
-{{-- @endsection  --}}
+    </div>
+@endsection
 
-{{-- @push('scripts')
+@push('scripts')
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -380,4 +380,4 @@
             });
         });
     </script>
-@endpush --}}
+@endpush
